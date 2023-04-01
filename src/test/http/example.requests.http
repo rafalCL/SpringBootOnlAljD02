@@ -3,3 +3,10 @@ GET localhost:8080
 
 ###
 GET localhost:8082
+
+###
+GET localhost:8082/stat
+
+
+###
+GET localhost:8082/ex
