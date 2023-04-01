@@ -10,3 +10,18 @@ GET localhost:8082/stat
 
 ###
 GET localhost:8082/ex
+
+### cartoon API Richardson 0
+GET localhost:8082/getAllCartoons
+
+###
+GET localhost:8082/getCartoonById?id=42
+
+###
+POST localhost:8082/createCartoon
+
+{"title":"Król Lew", "description":"description"}
+
+###
+GET localhost:8082/deleteCartoonById?id=4242
+
