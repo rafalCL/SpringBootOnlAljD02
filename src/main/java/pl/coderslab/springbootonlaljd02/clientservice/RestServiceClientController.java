@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 import pl.coderslab.springbootonlaljd02.cinema.genre.Genre;
 
@@ -57,12 +58,17 @@ public class RestServiceClientController {
         headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
 
         HttpEntity<String> entity = new HttpEntity<>("parameters", headers);
-        ResponseEntity<Genre> responseEntity = restTemplate.exchange(url, HttpMethod.GET, entity, Genre.class, 1);
-
-        if (responseEntity.getStatusCode() == HttpStatus.OK) {
-            return "wysłano zapytanie http, obiekt odpowiedzi: "+responseEntity.getBody();
+        try {
+            ResponseEntity<Genre> responseEntity = restTemplate.exchange(url, HttpMethod.GET, entity, Genre.class, 1);
+            // tu obsługujemy tylko kody 2xx,
+            // gdyż w innym wypdaku metoda exchange() rzuca wyjątek, a nie zwraca ResponseEntity
+            if (responseEntity.getStatusCode() == HttpStatus.OK) {
+                return "wysłano zapytanie http, obiekt odpowiedzi: " + responseEntity.getBody();
+            }
+        } catch (RestClientException e) {
+            return "wysłano zapytanie http, serwis zwrócił błąd: "+ e.getMessage();
         }
 
-        return "wysłano zapytanie http, serwis zwrócił błąd: "+responseEntity.getStatusCode() + ", " + responseEntity.getStatusCodeValue();
+        return "unhandled case";
     }
 }
