@@ -1,6 +1,7 @@
 package pl.coderslab.springbootonlaljd02.cinema.genre;
 
 import org.springframework.stereotype.Service;
+import pl.coderslab.springbootonlaljd02.api.ResourceNotFoundException;
 
 import java.util.List;
 import java.util.Random;
