@@ -1,2 +1,12 @@
 ###
 GET localhost:8082/client/call1
+
+###
+GET localhost:8082/client/call2
+
+###
+GET localhost:8082/client/call3
+
+###
+GET localhost:8082/client/exchange
+
