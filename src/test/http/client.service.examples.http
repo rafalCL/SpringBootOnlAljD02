@@ -10,3 +10,9 @@ GET localhost:8082/client/call3
 ###
 GET localhost:8082/client/exchange
 
+###
+GET localhost:8082/apifootball/call1
+
+###
+GET https://apifootball.com/api/?action=get_countries&APIkey=eee5028bd4f1a9645f0de3b18aa4c17c11a0eedd815aeaacf2cae4d5801e8969
+
