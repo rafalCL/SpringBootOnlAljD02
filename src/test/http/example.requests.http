@@ -25,3 +25,8 @@ POST localhost:8082/createCartoon
 ###
 GET localhost:8082/deleteCartoonById?id=4242
 
+###
+GET localhost:8082/re
+
+###
+GET localhost:8082/reb
