@@ -1,0 +1,20 @@
+###
+GET localhost:8082/genres
+
+###
+GET localhost:8082/genres/4242
+
+###
+POST localhost:8082/genres
+Content-Type: application/json
+
+{"name":"science-fiction"}
+
+###
+DELETE localhost:8082/genres/4242
+
+###
+PUT localhost:8082/genres/42
+Content-Type: application/json
+
+{"name":"Science-Fiction"}
