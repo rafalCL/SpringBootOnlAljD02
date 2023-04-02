@@ -2,7 +2,7 @@
 GET localhost:8082/genres
 
 ###
-GET localhost:8082/genres/4242
+GET localhost:8082/genres/4242?trace=true&message=true
 
 ###
 POST localhost:8082/genres

@@ -12,6 +12,9 @@ class GenreService {
     }
 
     public Genre getOneById(final long id) {
+        if(Math.random() < .5) {
+            throw new ResourceNotFoundException("brak zasobu o id="+id);
+        }
         return new Genre(id, "genre "+id);
     }
 
@@ -28,14 +31,14 @@ class GenreService {
 
     public void deleteOneById(long id) {
         if(Math.random() < .5) {
-            throw new RuntimeException("wystąpił wyjątek podczas usuwania");
+            throw new ResourceNotFoundException("brak zasobu o id="+id);
         }
         System.out.println("usunięcie encji o id="+id);
     }
 
     public Genre update(Genre genre) {
         if(Math.random() < .5) {
-            throw new RuntimeException("wystąpił wyjątek podczas modyfikowania");
+            throw new ResourceNotFoundException("brak zasobu o id="+genre.getId());
         }
         return genre;
     }

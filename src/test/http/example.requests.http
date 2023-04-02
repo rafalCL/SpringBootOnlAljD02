@@ -9,7 +9,7 @@ GET localhost:8082/stat
 
 
 ###
-GET localhost:8082/ex
+GET localhost:8082/ex?trace=true&message=true
 
 ### cartoon API Richardson 0
 GET localhost:8082/getAllCartoons
